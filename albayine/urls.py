@@ -2,9 +2,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
 from django.views.static import serve
-
 from home import views as homeViews
 from django.contrib import admin
+
 admin.site.site_header = "Abdelbari Portfolio Website"
 urlpatterns = [
     path('admin/', admin.site.urls),
