@@ -1,0 +1,47 @@
+<!-- ======= Portfolio Details Section ======= -->
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+                <div class="portfolio-details-slider swiper" style="top: 0;height: 450px">
+                    <div class="swiper-wrapper align-items-center">
+
+                        <div class="swiper-slide">
+                            <img src="{{ project.image.url }}" alt="">
+                        </div>
+                        {% for im in images %}
+                            <div class="swiper-slide">
+                                <img src="{{ im.image.url }}" alt="">
+                            </div>
+                        {% endfor %}
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="portfolio-info">
+                    <h3>Project information</h3>
+                    <ul>
+                        <li><strong>Category</strong>: {{ project.category.title }}</li>
+                        <li><strong>Client</strong>: {{ project.company }}</li>
+                        <li><strong>Project date</strong>:{{ project.start }}-{{ project.end }}</li>
+                        <li><strong>Project URL</strong>: <a href="{{ project.link  }}">{{ project.link }}</a></li>
+                    </ul>
+                </div>
+                <div class="portfolio-description">
+                    <h2>Detail</h2>
+                    <p>
+                        {{ project.detail }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Details Section -->
+
+
+</body>

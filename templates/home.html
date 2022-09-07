@@ -1,0 +1,27 @@
+{% load static %}
+<style>
+    #hero {
+        width: 100%;
+        height: 100vh;
+        background: url("{{ profile.image.url }}") top right no-repeat;
+        z-index: 1;
+        opacity:1.0;
+        background-size: cover;
+        position: relative;
+    }
+    #hero  img {
+        background: transparent;
+    }
+</style>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center" >
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+        <h1 style="color:#10107f">{{ profile.user.first_name }}</h1>
+        <p style="color:#10107f">I'm <span class="typed" data-typed-items="{{ profile.posts }}" style="color:#ec4d0f"></span></p>
+        <div class="social-links">
+            {% for m in medias %}
+                <a href="{{ m.link }}" class="{{ m.title }}" target="_blank"><i class="{{ m.symbol }}"></i></a>
+            {% endfor %}
+        </div>
+    </div>
+</section><!-- End Hero -->
